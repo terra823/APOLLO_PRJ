@@ -1,0 +1,10 @@
+{% extends "contactTemplate/main.html" %}
+
+{% block title %}{{ title|capfirst}} Contact {% endblock %}
+{% block body %}
+    <form enctype="multipart/form-data" action="{% url SiteContactInfo %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+        </form>
+{% endblock %}

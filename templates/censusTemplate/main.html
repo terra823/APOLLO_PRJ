@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<style type="text/css">
+	body {
+	margin-top: 0;
+	padding: 0;
+	font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+	line-height: 1.8em;
+	color: #fff;
+	text-align: left;
+	min-width: 760px;
+	background-color: #4a525a; /* dark blue slate thing */
+	}
+
+a {
+	text-decoration: none;
+	}
+
+a:link {
+	text-decoration: none;
+	color: #ddd;
+	padding: 3px 0px 2px 0px;
+	background-color: inherit;
+	}
+
+a:visited {
+	color: #ddd;
+	border-color: #999;
+	border-width: 0 0 1px 0;
+	border-style: none none dotted none;
+	padding: 3px 0px 2px 0px;
+	background-color: inherit;
+	}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+	background-color: #606870;
+	border-color: #606870;
+	}
+
+a em {
+	padding-bottom: 2px; /* Hack for WebKit; otherwise the underscore padding is 0 */
+	}
+
+
+
+p {
+ 	margin: 0 0 1.6em 0;
+	padding: 0;
+	}
+
+h1 {
+	font-family: "Gill Sans", "Gill Sans Std", "Gill Sans MT", Georgia, serif;
+	font-size: 1.55em; /* was 1.46em for Georgia */
+	line-height: 1.5em;
+	text-align: left;
+	font-weight: normal;
+	margin: 0em 0px 1.25em 0px;
+	}
+
+h2 {
+	font-family: "Gill Sans", "Gill Sans Std", "Gill Sans MT", Verdana, "Bitstream Vera Sans", sans-serif;
+	font-size: 1.1em; /* 1 */
+	text-align: left;
+	font-weight: normal;
+	line-height: 1.8em;
+	letter-spacing: .2em;
+	margin: 4em 0 1em 0;
+	text-transform: uppercase;
+	}
+
+h1 + h2 {
+	margin-top: 2em;
+	}
+h2 + h3 {
+	margin-top: 1.5em;
+	}
+
+h3 {
+	font-family: "Gill Sans", "Gill Sans Std", "Gill Sans MT", Verdana, "Bitstream Vera Sans", sans-serif;
+	font-size: .91em;
+	text-align: left;
+	font-weight: normal;
+	line-height: 1.8em;
+	letter-spacing: .2em;
+	margin-bottom: 1.4em;
+	margin-top: 3em;
+	text-transform: uppercase;
+	}	
+
+li{
+	list-style:none; 
+	text-decoration:none;
+}
+
+	#wrapper{width:960px; padding:40px 0 0 0; margin: 0 auto; }
+</style>
+
+
+	<link rel="stylesheet" href="../static/stylesheets/style.css" type="text/css" /> 
+    <title>{% block title %}{{ title|capfirst }} Signup {% endblock %}</title>
+</head>
+<body>
+<a href="{% url home %}">Home</a><br / >
+<a href="{% url censusTemplate_main %}">Census Home</a>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% block body %}
+<ul>
+    <li><a href="{% url SiteCensusInfo %}">Census Form</a></li>
+
+</ul>
+{% endblock %}
+</body>
+</html>
